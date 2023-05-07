@@ -233,7 +233,7 @@ router.get('/summary', function (req, res) {
               from: '15.01.2022',
               to: null,
             },
-            projectAmount: 1,
+            projectAmount: 11,
 
             projects: [
               {

@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+{{!-- <div>
     {{#with program}}
     {{#with excursion}}
     <h1>{{name}}</h1>
@@ -64,10 +64,6 @@
             <div>{{name}}</div>
             <div>{{type}}</div>
         </li>
-        <li>
-            <div>{{name}}</div>
-            <div>{{type}}</div>
-        </li>
     </ul>
     {{/each}}
     {{/with}}
@@ -75,10 +71,62 @@
 
     {{/with}}
     {{/with}}
+</div> --}}
+
+
+<div>
+    {{#with program.excursion}}
+    <h1>{{name}}</h1>
+    {{#with location}}
+    <strong>{{city}}, {{country}},</strong>
+    {{/with}}
+    <date>{{date}}</date>
+    <br>
+    <hr>
+    <h2>Program</h2>
+    {{#each program}}
+    <div>{{name}}</div>
+    <div>{{type}} ({{duration}})</div>
+    <br>
+    {{#with details.museum}}
+    <b>{{name}}</b>
+
+    <h2>Exhibits</h2>
+    {{#each exhibits}}
+    <ul>
+        <li>
+
+            <p>{{name}}</p>
+            <p> {{#if artist}}({{artist}}){{/if}}</p>
+            <p>{{description}}</p>
+            {{#if audio_guide includeZero=true}} {{/if}}
+        </li>
+    </ul>
+    {{/each}}
+    {{/with}}
+    {{#with details.guide}}
+    <b>{{name}},</b>
+    <b>{{language}}</b>
+    <b>{{rating}}</b>
+    {{/with}}
+    {{!-- /each}} --}}
+    {{#with details.venue}}
+    <b>{{name}}</b>
+    {{#with location}}
+    <address>{{address}}</address>
+    <address>{{city}}</address>
+    <address>{{country}}</address>
+    {{/with}}
+    {{/with}}
+    {{#each details.performers}}
+    <ul>
+        <li>{{name}}{{type}}</li>
+    </ul>
+    {{/each}}
+    {{!-- /with}} --}}
+    {{/each}}
+    {{/with}}
 </div>
-
-
-
 
 
 

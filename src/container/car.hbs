@@ -1,0 +1,105 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <strong>{{make}}</strong>
+    <strong>{{model}}</strong>
+    <b>{{year}}</b>
+    <b>{{color}}</b>
+    <br>
+
+    {{#with features}}
+    {{#with interior}}
+    {{#with seats}}
+    <p>{{material}}</p>
+    <p>{{color}}</p>
+    <p>{{heated}}</p>
+    <p>{{ventilated}}</p>
+    {{/with}}
+    {{#with dashboard}}
+    <p>{{material}}</p>
+    <p>{{color}}</p>
+    {{#with display}}
+    <p>{{type}}</p>
+    <p>{{size}}</p>
+    <p>{{resolution}}</p>
+    <p>{{touchscreen}}</p>
+    {{/with}}
+    {{/with}}
+    {{#with audio}}
+    <p>{{system}}</p>
+    <p>{{speakers}}</p>
+    <p>{{subwoofer}}</p>
+    <p>{{bluetooth}}</p>
+    <p>{{USB}}</p>
+    {{/with}}
+    {{/with}}
+    {{#with exterior}}
+    {{#with wheels}}
+    <p>{{size}}</p>
+    <p>{{type}}</p>
+    <p>{{color}}</p>
+    {{/with}}
+    {{#with headlights}}
+    <p>{{type}}</p>
+    <p>{{brightness}}</p>
+    <p>{{automatic}}</p>
+    {{/with}}
+    {{#with sunroof}}
+    <p>{{type}}</p>
+    <p>{{size}}</p>
+    <p>{{automatic}}</p>
+    {{/with}}
+    {{/with}}
+    {{#with safety}}
+    {{#with airbags}}
+    <p>{{front}}</p>
+    <p>{{side}}</p>
+    <p>{{knee}}</p>
+    <p>{{rear}}</p>
+    {{/with}}
+    {{#with assistance}}
+    <p>{{blind_spot_monitoring}}</p>
+    <p>{{rear_cross_traffic_alert}}</p>
+    <p>{{lane_departure_warning}}</p>
+    <p>{{adaptive_cruise_control}}</p>
+    <p>{{collision_warning}}</p>
+    {{/with}}
+    {{/with}}
+    {{/with}}
+    {{#with engine}}
+    <p>{{type}}</p>
+    <p>{{displacement}}</p>
+    <p>{{horsepower}}</p>
+    <p>{{torque}}</p>
+    {{#with transmission}}
+    <p>{{type}}</p>
+    <p>{{gears}}</p>
+    {{/with}}
+    {{/with}}
+    {{#with fuel_economy}}
+    <p>{{city}}</p>
+    <p>{{highway}}</p>
+    <p>{{combined}}</p>
+    {{/with}}
+    {{#with price}}
+    <p>{{base}}</p>
+    <p>{{destination}}</p>
+    {{#with options}}
+    <p>{{navigation}}</p>
+    <p>{{moonroof}}</p>
+    <p>{{premium_paint}}</p>
+    {{/with}}
+    <b>{{total}}</b>
+    {{/with}}
+
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

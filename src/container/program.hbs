@@ -98,7 +98,6 @@
     {{#each exhibits}}
     <ul>
         <li>
-
             <p>{{name}}</p>
             <p> {{#if artist}}({{artist}}){{/if}}</p>
             <p>{{description}}</p>
@@ -123,9 +122,12 @@
     <address>{{country}}</address>
     {{/with}}
     {{/with}}
+    <h2>Exhibits</h2>
     {{#each details.performers}}
     <ul>
-        <li>{{name}}{{type}}</li>
+        <li>
+            <p>{{name}} - {{type}}</p>
+        </li>
     </ul>
     {{/each}}
     {{!-- /with}} --}}

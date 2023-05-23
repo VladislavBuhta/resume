@@ -1,0 +1,80 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1><strong>{{name}}</strong></h1>
+    <h2><em>{{description}}</em></h2>
+    <h2>{{price}}</h2>
+    <h2>
+        <prise>{{category}}</prise>
+    </h2>
+    <hr>
+    {{#with features}}
+    {{#with processor}}
+    <p>{{brand}}</p>
+    <p>{{model}}</p>
+    <p>{{speed}}</p>
+    <p>{{cores}}</p>
+    <p>{{cache}}</p>
+    {{/with}}
+    <hr>
+    {{#with memory}}
+    <p>{{type}}</p>
+    <p>{{size}}</p>
+    <p>{{speed}}</p>
+    {{/with}}
+    <hr>
+    {{#with storage}}
+    <p>{{type}}</p>
+    <p>{{size}}</p>
+    {{/with}}
+    <hr>
+    {{#with display}}
+    <p>{{size}}</p>
+    <p>{{resolution}}</p>
+    <p>{{technology}}</p>
+    <p>{{color_space}}</p>
+    <p>{{brightness}}</p>
+    <p>{{refresh_rate}}</p>
+    {{/with}}
+    <hr>
+    {{#with graphics}}
+    <p>{{brand}}</p>
+    <p>{{model}}</p>
+    <p>{{memory}}</p>
+    {{/with}}
+    <hr>
+    {{#each ports}}
+    <p>{{type}} - {{count}}</p>
+    <p>{{features}}</p>
+    {{/each}}
+    <hr>
+    {{#with battery}}
+    <p>{{type}}</p>
+    <p>{{capacity}}</p>
+    <p>{{life}}</p>
+    {{/with}}
+    <hr>
+    <p>{{weight}}</p>
+    <hr>
+    {{#with dimensions}}
+    <p>{{height}}</p>
+    <p>{{width}}</p>
+    <p>{{depth}}</p>
+    {{/with}}
+    <hr>
+    <p>{{operating_system}}</p>
+    <hr>
+    {{#each accessories}}
+    <p>{{name}}</p>
+    <p>{{price}}</p>
+    {{/each}}
+    {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

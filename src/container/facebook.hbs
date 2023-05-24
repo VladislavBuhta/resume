@@ -28,6 +28,12 @@
     <p>{{gender}}</p>
     <p>{{age}}</p>
     {{/each}}
+    <h2>Groups</h2>
+    {{#each groups}}
+    <p>{{id}}</p>
+    <p>{{name}}</p>
+    <p>{{description}}</p>
+    {{/each}}
     {{/each}}
     <hr>
     <h2>Groups</h2>
@@ -44,13 +50,8 @@
     <p>{{age}}</p>
     {{/each}}
     {{/each}}
-    {{#with friends}}
-    <p>{{id}}</p>
-    <p>{{name}}</p>
-    <p>{{gender}}</p>
-    <p>{{age}}</p>
-    <hr>
-    {{/with}}
+
+
     {{/each}}
 </div>
 

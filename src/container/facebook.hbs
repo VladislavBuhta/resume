@@ -14,6 +14,7 @@
     <p>{{gender}}</p>
     <p>{{age}}</p>
     <hr>
+
     <h2>Friends</h2>
     {{#each friends}}
     <p>{{id}}</p>
@@ -21,28 +22,41 @@
     <p>{{gender}}</p>
     <p>{{age}}</p>
     <hr>
-    <h2>Mutual friends</h2>
+
+    {{#each mutual_friends}}
+    <p>{{id}}</p>
+    <p>{{name}}</p>
+    <p>{{gender}}</p>
+    <p>{{age}}</p>
     {{#each mutual_friends}}
     <p>{{id}}</p>
     <p>{{name}}</p>
     <p>{{gender}}</p>
     <p>{{age}}</p>
     {{/each}}
-    <h2>Groups</h2>
+    {{/each}}
+
+
     {{#each groups}}
     <p>{{id}}</p>
     <p>{{name}}</p>
     <p>{{description}}</p>
+    {{#each members}}
+    <p>{{id}}</p>
+    <p>{{name}}</p>
+    <p>{{gender}}</p>
+    <p>{{age}}</p>
     {{/each}}
+    {{/each}}
+
     {{/each}}
     <hr>
-    <h2>Groups</h2>
+
     {{#each groups}}
     <p>{{id}}</p>
     <p>{{name}}</p>
     <p>{{description}}</p>
 
-    <h2>Members</h2>
     {{#each members}}
     <p>{{id}}</p>
     <p>{{name}}</p>

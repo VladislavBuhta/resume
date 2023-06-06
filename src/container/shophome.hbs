@@ -1,0 +1,125 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main class="p-5">
+    <div class="card">
+        <div class="nav nav-tabs">
+            {{#with navigation}}
+            {{#each links}}
+            <div class="nav-item">
+                <a href="{{href}}" class="nav-link">{{text}}</a>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </div>
+
+    {{#with newsBlock}}
+    <h2 class="text-center p-2">{{title}}</h2>
+
+    <div class="row">
+        {{#each cards}}
+        <div class="col-3 g-8 p-1">
+            <div class="card text-bg-dark">
+                <div class="card-header">
+                    <div>
+                        {{title}}
+                        <span class="badge text-bg-danger rounded-pill px-2">{{#if isTop
+                            includeZero=true}}Top{{/if}}</span>
+                        <span class="badge text-bg-success rounded-pill">{{#if isNew includeZero=true}}New{{/if}}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{description}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+
+    <hr>
+
+    <div class="py-5">
+        <div class="nav nav-tabs">
+            {{#with goodsBlock}}
+            {{#each tabs}}
+            <div class="nav-item">
+                <a href="#"
+                    class="nav-link {{#if isActive includeZero=true}}active{{/if}} {{#if isDisabled includeZero=true}}disabled{{/if}} ">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+    <div class="row">
+        {{#each cards}}
+        <div class="col-4 g-8">
+            <div class="card">
+                <img class="card-img-top" src="{{image}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}} <span class="badge text-bg-warning rounded-pill px-2">{{#if isHot
+                            includeZero=true}}Hot!{{/if}}</span><span class="badge text-bg-primary rounded-pill">{{#if
+                            isNew
+                            includeZero=true}}New{{/if}}</span></h5>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr>
+
+    <div class="p-4">
+        <div class="card p-1 text-bg-dark">
+            {{#with subscribe}}
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="p-1">
+                <a href="{{link}}" class="btn btn-primary btn-sm">{{text}}</a>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </div>
+    <hr>
+
+    <div class="p-4">
+        <div class="card p-2 text-bg-success">
+            <div class="text-center">
+                {{#with service}}
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                {{#each buttons}}
+                <div class="p-1">
+                    <a href="{{link}}" class="btn btn-primary btn-sm">{{text}}</a>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="py-2">
+        <div class="nav">
+            {{#each footer}}
+            {{#each this}}
+
+            <div class="nav-item col-3">
+                <a href="{{link}}" class="nav-link" target="_blank">{{text}}</a>
+            </div>
+            {{/each}}
+            {{/each}}
+        </div>
+    </div>
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
